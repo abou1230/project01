@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget{
     // TODO: implement build
     return Center(
       child: Text(
-        "Home Page Abk",
+        "Home Page ",
         textDirection: TextDirection.rtl,
       ),
     );
