@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage>{
             onPressed: () {
               Navigator.pushNamed(context, '/settings');
             },
-            child: const Text("Aller sur la page Setting ")
+            child: const Text("Aller sur la page Settings ")
         ),
       ),
     );
