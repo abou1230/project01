@@ -35,32 +35,46 @@ class HomePageState extends State<HomePages>{
     return Scaffold(
       body:  //Center(child: Text("Whatsapp"),),
       pages[pageIndex],
-      bottomNavigationBar: NavigationBar(
-        backgroundColor: Colors.white,
-        destinations: [
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(color: Colors.grey, width: 0.2)
+          )
+        ),
+        child: NavigationBar(
+          selectedIndex: pageIndex, //elle nous indique la destination
+          onDestinationSelected: (int index){
+            setState(() {
+              pageIndex=index;
+            });
 
-          NavigationDestination(
-              icon: Icon(Icons.message),
-              label: "Discussion"
-          ),
+          },
+          backgroundColor: Colors.white,
+          destinations: const [
 
-          NavigationDestination(
+            NavigationDestination(
+                icon: Icon(Icons.message),
+                label: "Discussion"
+            ),
+
+            NavigationDestination(
               icon: Icon(Icons.filter_tilt_shift),
               label: "Actus",
-          ),
+            ),
 
-          NavigationDestination(
-              icon: Icon(Icons.group),
-              label: "Communautes"
-          ),
+            NavigationDestination(
+                icon: Icon(Icons.group),
+                label: "Communautes"
+            ),
 
-          NavigationDestination(
-              icon: Icon(Icons.phone),
-              label: "Appels"
-          ),
+            NavigationDestination(
+                icon: Icon(Icons.phone),
+                label: "Appels"
+            ),
 
-        ],
-      ),
+          ],
+        ),
+      )
     );
   }
 }
